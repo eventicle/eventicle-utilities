@@ -17,7 +17,7 @@ export function jsonColumnQueryBuilder(key: string, query: DataQuery, params: (s
       params.push(query.value as any)
       break;
     case "EQ":
-      queryString += ` AND content->>'${key}'= ?`;
+      queryString += ` AND content->>'${key}'= $[key]`;
       params.push(query.value as any)
       break;
     case "GT":
@@ -83,13 +83,6 @@ export function buildWhere(query: { [p: string]: string | number | DataQuery }, 
   return queryString;
 }
 
-export function baseQuery(type) {
-  return `select * from ${tableName(type)} where type = ?`;
-}
-
-export function tableName(type) {
-  if (type === "event-backup" || "event-restoration") {
-    return "backupdatastore";
-  }
-  return "datastore";
+export function baseQuery(type, tableName) {
+  return `select * from ${tableName} where type = ?`;
 }
