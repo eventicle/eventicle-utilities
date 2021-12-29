@@ -17,7 +17,7 @@ interface Record {
 
 interface DataQuery {
   value: string | number | [number, number] | string[] | {[key: string]: any}
-  op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT"
+  op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE"
 }
 
 interface DataSorting {
@@ -81,8 +81,9 @@ interface DataStore {
 
   /**
    *
-   * @param {*} type Entity type or "table" name
-   * @param {*} item
+   * @param workspaceId
+   * @param type Entity type or "table" name
+   * @param content
    */
   createEntity(workspaceId: string, type: string, content: any): Promise<Record>
 
