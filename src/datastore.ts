@@ -20,6 +20,10 @@ interface DataQuery {
   op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE"
 }
 
+export type Query = {
+  [key: string]: string | number | DataQuery
+}
+
 interface DataSorting {
   [key:string]: 'ASC' | 'DESC'
 }
@@ -62,9 +66,7 @@ interface DataStore {
    * @param {*} query  Json object to match fields
    * @param sorting
    */
-  findEntity(workspaceId: string, type: any, query: {
-    [key: string]: string | number | DataQuery
-  }, sorting?: DataSorting): Promise<Record[]>
+  findEntity(workspaceId: string, type: any, query: Query, sorting?: DataSorting): Promise<Record[]>
 
   /**
    *
@@ -75,9 +77,7 @@ interface DataStore {
    * @param {*} page page count
    * @param {*} pageSize page size
    */
-  findEntityPaginated(workspaceId: string, type: string, query: {
-    [key: string]: string | number | DataQuery
-  }, sorting: DataSorting, page: number, pageSize: number): Promise<PagedRecords>
+  findEntityPaginated(workspaceId: string, type: string, query: Query, sorting: DataSorting, page: number, pageSize: number): Promise<PagedRecords>
 
   /**
    *
@@ -90,6 +90,8 @@ interface DataStore {
   saveEntity(workspaceId: string, type: string, item: Record): Promise<Record>
 
   deleteEntity(workspaceId: string, type: string, id: string): Promise<void>
+
+  deleteMany(workspaceId: string, type: string, query: Query): Promise<void>
 }
 
 let dataStoreModule: DataStore;
