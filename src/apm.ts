@@ -3,13 +3,15 @@ import logger from "./logger";
 let APM: ApmApi = {
   getCurrentTraceIds:  () => {},
   endTransaction: () => null,
-  getCurrentTransaction: () => ({ startSpan: name => ({ addLabels: () => null, getCurrentTraceID: () => null, setType: type => null, end: () => {}}), traceparent: null}),
+  getCurrentTransaction: () => ({ startSpan: name => ({ rawSpan: () => null, addLabels: () => null, getCurrentTraceID: () => null, setType: type => null, end: () => {}}), traceparent: null}),
   getCurrentSpan: () => ({
+    rawSpan: () => null,
     setType: type => null,
     getCurrentTraceID: () => null,
     addLabels: (val) => null,
     end: () => null
   }),
+  rawApm: () => null,
   startTransaction: (name, type, subtype, parent) => {}
 }
 
@@ -18,6 +20,7 @@ export function getAPM(): ApmApi {
 }
 
 interface Span {
+  rawSpan: () => any
   addLabels: (labels: any) => void
   setType: (type: string) => void
   getCurrentTraceID: () => string
@@ -25,6 +28,7 @@ interface Span {
 }
 
 export interface ApmApi {
+  rawApm: () => any
   getCurrentTraceIds?:  () => any,
   getCurrentTransaction: () => { traceparent: string, startSpan: (name: string) => Span }
   getCurrentSpan: () => Span
@@ -40,7 +44,7 @@ export function getApmTraceparent() {
   if (APM && APM.getCurrentSpan()) {
     return APM.getCurrentSpan().getCurrentTraceID()
   }
-  if (APM && APM.getCurrentTransaction) {
+  if (APM && APM.getCurrentTransaction()) {
     return APM.getCurrentTransaction().traceparent
   }
 }
@@ -81,6 +85,7 @@ export async function span<T>(name: string, labels: { [key: string]: string }, e
 export function elasticApmEventicle(apm): ApmApi {
 
   const currentSpanFun = apm.currentSpan ? () => ({
+    rawSpan: () => apm.currentSpan,
     setType: type => apm.currentSpan.setType(type),
     getCurrentTraceID: () => (apm.currentSpan.traceparent),
     addLabels: (val) => (apm.currentSpan.addLabels(val)),
@@ -88,6 +93,7 @@ export function elasticApmEventicle(apm): ApmApi {
   }) : () => null;
 
   return {
+    rawApm: () => apm,
     getCurrentTraceIds:  () => apm.currentTraceIds ? apm.currentTraceIds : {},
     endTransaction: () => apm.endTransaction(),
     getCurrentTransaction: () => apm.currentTransaction,

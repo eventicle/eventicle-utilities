@@ -1,11 +1,12 @@
 {
   "name": "@eventicle/eventicle-utilities",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "description": "Useful utilities",
   "repository": "git@github.com:eventicle/eventicle-utilities.git",
   "author": "Eventicle Team",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
@@ -15,6 +16,7 @@
     "lint": "eslint . --ext .ts --fix"
   },
   "dependencies": {
+    "stack-trace": "^1.0.0-pre1",
     "winston": "^3.3.3"
   },
   "devDependencies": {

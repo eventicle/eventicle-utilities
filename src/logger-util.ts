@@ -1,10 +1,11 @@
-const stackTrace = require('stack-trace');
+import * as stackTrace from './stack-trace'
 import * as winston from "winston";
 import {LeveledLogMethod, Logger} from "winston";
 import { getApmCurrentTraceIds } from "./apm";
 import { get, has } from 'lodash';
 
 export function getFileNameAndLineNumber(numberOfLinesToFetch = 3) {
+
   const err = new Error('something went wrong');
   const trace = stackTrace.parse(err);
 
@@ -93,6 +94,7 @@ export function isError(data: any): data is Error {
 }
 
 export function maybeRenderError(data: any) {
+
   if (isError(data)) {
     // it's an error, probably
     return {
