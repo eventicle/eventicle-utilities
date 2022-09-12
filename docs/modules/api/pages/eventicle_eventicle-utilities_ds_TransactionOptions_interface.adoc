@@ -1,0 +1,25 @@
+= interface ds.TransactionOptions
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_TransactionOptions_propagation_member"]
+=== propagation
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+propagation: "requires" | "requires_new";
+----
+
+========

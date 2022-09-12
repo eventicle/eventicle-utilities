@@ -1,0 +1,212 @@
+= interface LogApi
+
+
+
+
+
+== Methods
+
+[id="eventicle_eventicle-utilities_LogApi_debug_member_1"]
+=== debug(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+debug(message: string, arg?: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_LogApi_error_member_1"]
+=== error(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+error(message: string, arg?: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_LogApi_info_member_1"]
+=== info(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+info(message: string, arg?: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_LogApi_rainbow_member_1"]
+=== rainbow(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+rainbow(message: string, arg?: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_LogApi_trace_member_1"]
+=== trace(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+trace(message: string, arg?: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_LogApi_warn_member_1"]
+=== warn(message, arg)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|arg
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+warn(message: string, arg?: any): any;
+----
+
+========

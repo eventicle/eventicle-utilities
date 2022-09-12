@@ -1,0 +1,48 @@
+= interface LockManager_2
+
+A lock manager
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_LockManager_2_tryLock_member"]
+=== tryLock
+
+========
+
+Obtain a lock over a shared resource.
+
+If the lock is not immediately available, will call onLockFailure and terminate
+
+
+
+
+.Signature
+[source,typescript]
+----
+tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+----
+
+========
+[id="eventicle_eventicle-utilities_LockManager_2_withLock_member"]
+=== withLock
+
+========
+
+Obtain a lock over a shared resource.
+
+Will block until the lock becomes available.
+
+Will call onLockFailure if the lock is not available within the built in timeout
+
+
+
+
+.Signature
+[source,typescript]
+----
+withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+----
+
+========

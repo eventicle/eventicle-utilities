@@ -1,0 +1,62 @@
+= interface ds.PagedRecords
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_PagedRecords_entries_member"]
+=== entries
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+entries: Record[];
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_PagedRecords_pageInfo_member"]
+=== pageInfo
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+pageInfo: {
+        currentPage: number;
+        pageSize: number;
+    };
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_PagedRecords_totalCount_member"]
+=== totalCount
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+totalCount: number;
+----
+
+========

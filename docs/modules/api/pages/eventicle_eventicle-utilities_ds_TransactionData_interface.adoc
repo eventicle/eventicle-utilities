@@ -1,0 +1,44 @@
+= interface ds.TransactionData
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_TransactionData_data_member"]
+=== data
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+data: {
+        [key: string]: any;
+    };
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_TransactionData_id_member"]
+=== id
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+id: string;
+----
+
+========
