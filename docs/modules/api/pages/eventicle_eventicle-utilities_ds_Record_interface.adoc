@@ -1,0 +1,76 @@
+= interface ds.Record
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_Record_content_member"]
+=== content
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+content: any;
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_Record_createdAt_member"]
+=== createdAt
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+createdAt: Date;
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_Record_id_member"]
+=== id
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+id: string;
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_Record_type_member"]
+=== type
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+type: string;
+----
+
+========

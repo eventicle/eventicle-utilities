@@ -1,0 +1,680 @@
+= package @eventicle/eventicle-utilities
+
+
+
+
+
+== Interfaces
+
+[%header,cols="1,2",caption=""]
+|===
+|Name |Summary
+
+s|xref:eventicle_eventicle-utilities_ds_DataQuery_interface.adoc[ds.DataQuery]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_DataSorting_interface.adoc[ds.DataSorting]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_DataStore_interface.adoc[ds.DataStore]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_PagedRecords_interface.adoc[ds.PagedRecords]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_Record_interface.adoc[ds.Record]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_TransactionData_interface.adoc[ds.TransactionData]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_TransactionListener_interface.adoc[ds.TransactionListener]
+|
+
+s|xref:eventicle_eventicle-utilities_ds_TransactionOptions_interface.adoc[ds.TransactionOptions]
+|
+
+s|xref:eventicle_eventicle-utilities_LockManager_2_interface.adoc[LockManager_2]
+|A lock manager
+
+s|xref:eventicle_eventicle-utilities_LogApi_interface.adoc[LogApi]
+|
+|===
+
+== Functions
+
+[id="eventicle_eventicle-utilities_ds_dataStore_function_1"]
+=== ds.dataStore()
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+declare function dataStore(): DataStore;
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_setDataStore_function_1"]
+=== ds.setDataStore(dataStore)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|dataStore
+m|\~DataStore
+|
+
+s|Returns
+m|void
+|
+|===
+
+.Signature
+[source,typescript]
+----
+declare function setDataStore(dataStore: DataStore): void;
+----
+
+========
+[id="eventicle_eventicle-utilities_elasticApmEventicle_function_1"]
+=== elasticApmEventicle(apm)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|apm
+m|any
+|
+
+s|Returns
+m|\~ApmApi
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function elasticApmEventicle(apm: any): ApmApi;
+----
+
+========
+[id="eventicle_eventicle-utilities_getAPM_function_1"]
+=== getAPM()
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+export declare function getAPM(): ApmApi;
+----
+
+========
+[id="eventicle_eventicle-utilities_getApmCurrentTraceIds_function_1"]
+=== getApmCurrentTraceIds()
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+export declare function getApmCurrentTraceIds(): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_getApmTraceparent_function_1"]
+=== getApmTraceparent()
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+export declare function getApmTraceparent(): string;
+----
+
+========
+[id="eventicle_eventicle-utilities_hashCode_function_1"]
+=== hashCode(str)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|str
+m|string
+|
+
+s|Returns
+m|number
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function hashCode(str: string): number;
+----
+
+========
+[id="eventicle_eventicle-utilities_lockManager_function_1"]
+=== lockManager()
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+export declare function lockManager(): LockManager;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_getFileNameAndLineNumber_function_1"]
+=== loggerUtil.getFileNameAndLineNumber(numberOfLinesToFetch)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|numberOfLinesToFetch
+m|number
+|
+
+s|Returns
+m|{
+    file: any;
+    lineno: any;
+    timestamp: string;
+}
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function getFileNameAndLineNumber(numberOfLinesToFetch?: number): {
+    file: any;
+    lineno: any;
+    timestamp: string;
+};
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_handleNestedContextualError_function_1"]
+=== loggerUtil.handleNestedContextualError(info)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|info
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function handleNestedContextualError(info: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_handleTopLevelContextualError_function_1"]
+=== loggerUtil.handleTopLevelContextualError(info)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|info
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function handleTopLevelContextualError(info: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_isError_function_1"]
+=== loggerUtil.isError(data)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|data
+m|any
+|
+
+s|Returns
+m|@eventicle/eventicle-utilities!\~data is Error
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function isError(data: any): data is Error;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_maybeInsertContext_function_1"]
+=== loggerUtil.maybeInsertContext(context, source, fields)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|context
+m|any
+|
+
+m|source
+m|any
+|
+
+m|fields
+m|string[]
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function maybeInsertContext(context: any, source: any, ...fields: string[]): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_maybeInsertInlineContext_function_1"]
+=== loggerUtil.maybeInsertInlineContext(message, source, fields)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|message
+m|string
+|
+
+m|source
+m|any
+|
+
+m|fields
+m|string[]
+|
+
+s|Returns
+m|string
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function maybeInsertInlineContext(message: string, source: any, ...fields: string[]): string;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_maybeRenderError_function_1"]
+=== loggerUtil.maybeRenderError(data)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|data
+m|any
+|
+
+s|Returns
+m|any
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function maybeRenderError(data: any): any;
+----
+
+========
+[id="eventicle_eventicle-utilities_loggerUtil_proxyLogger_function_1"]
+=== loggerUtil.proxyLogger(logger, baseDirName)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|logger
+m|winston.Logger
+|
+
+m|baseDirName
+m|string
+|
+
+s|Returns
+m|winston.Logger
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function proxyLogger(logger: Logger, baseDirName: string): winston.Logger;
+----
+
+========
+[id="eventicle_eventicle-utilities_pause_function_1"]
+=== pause(ms)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|ms
+m|number
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+declare function pause(ms: number): Promise<void>;
+----
+
+========
+[id="eventicle_eventicle-utilities_setEventicleApm_function_1"]
+=== setEventicleApm(apm)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|apm
+m|\~ApmApi
+|
+
+s|Returns
+m|void
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function setEventicleApm(apm: ApmApi): void;
+----
+
+========
+[id="eventicle_eventicle-utilities_setLockManager_function_1"]
+=== setLockManager(lockManager)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|lockManager
+m|LockManager
+|
+
+s|Returns
+m|void
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function setLockManager(lockManager: LockManager): void;
+----
+
+========
+[id="eventicle_eventicle-utilities_setLogApi_function_1"]
+=== setLogApi(log)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|log
+m|xref:eventicle_eventicle-utilities_LogApi_interface.adoc[LogApi]
+|
+
+s|Returns
+m|void
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function setLogApi(log: LogApi): void;
+----
+
+========
+[id="eventicle_eventicle-utilities_span_function_1"]
+=== span(name, labels, exec)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|name
+m|string
+|
+
+m|labels
+m|{
+    [key: string]: string;
+}
+|
+
+m|exec
+m|(span: \~Span) =&gt; Promise&lt;T&gt;
+|
+
+s|Returns
+m|Promise&lt;T&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function span<T>(name: string, labels: {
+    [key: string]: string;
+}, exec: (span: Span) => Promise<T>): Promise<T>;
+----
+
+========
+[id="eventicle_eventicle-utilities_withAPM_function_1"]
+=== withAPM(exec)
+
+========
+
+
+
+
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|exec
+m|(apm: \~ApmApi) =&gt; Promise&lt;void&gt;
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+export declare function withAPM(exec: (apm: ApmApi) => Promise<void>): Promise<void>;
+----
+
+========

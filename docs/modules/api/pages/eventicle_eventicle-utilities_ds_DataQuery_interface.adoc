@@ -1,0 +1,44 @@
+= interface ds.DataQuery
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_DataQuery_op_member"]
+=== op
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE";
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_DataQuery_value_member"]
+=== value
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+value: string | number | [number, number] | string[] | {
+        [key: string]: any;
+    };
+----
+
+========

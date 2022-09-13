@@ -1,0 +1,13 @@
+.API documentation
+* xref:eventicle_eventicle-utilities.adoc[@eventicle/eventicle-utilities]
+** xref:eventicle_eventicle-utilities_ds_DataQuery_interface.adoc[ds.DataQuery]
+** xref:eventicle_eventicle-utilities_ds_DataSorting_interface.adoc[ds.DataSorting]
+** xref:eventicle_eventicle-utilities_ds_DataStore_interface.adoc[ds.DataStore]
+** xref:eventicle_eventicle-utilities_ds_PagedRecords_interface.adoc[ds.PagedRecords]
+** xref:eventicle_eventicle-utilities_ds_Query_type.adoc[ds.Query]
+** xref:eventicle_eventicle-utilities_ds_Record_interface.adoc[ds.Record]
+** xref:eventicle_eventicle-utilities_ds_TransactionData_interface.adoc[ds.TransactionData]
+** xref:eventicle_eventicle-utilities_ds_TransactionListener_interface.adoc[ds.TransactionListener]
+** xref:eventicle_eventicle-utilities_ds_TransactionOptions_interface.adoc[ds.TransactionOptions]
+** xref:eventicle_eventicle-utilities_LockManager_2_interface.adoc[LockManager_2]
+** xref:eventicle_eventicle-utilities_LogApi_interface.adoc[LogApi]

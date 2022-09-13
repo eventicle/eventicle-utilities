@@ -1,0 +1,42 @@
+= interface ds.TransactionListener
+
+
+
+
+
+== Properties
+
+[id="eventicle_eventicle-utilities_ds_TransactionListener_onCommit_member"]
+=== onCommit
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+onCommit: (data: TransactionData) => void;
+----
+
+========
+[id="eventicle_eventicle-utilities_ds_TransactionListener_onStart_member"]
+=== onStart
+
+========
+
+
+
+
+
+
+.Signature
+[source,typescript]
+----
+onStart: (data: TransactionData) => void;
+----
+
+========
