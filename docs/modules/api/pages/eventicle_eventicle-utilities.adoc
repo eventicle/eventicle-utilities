@@ -75,7 +75,7 @@ declare function dataStore(): DataStore;
 |Name |Type |Description
 
 m|dataStore
-m|\~DataStore
+m|xref:eventicle_eventicle-utilities_ds_DataStore_interface.adoc[ds.DataStore]
 |
 
 s|Returns
@@ -561,7 +561,7 @@ export declare function setEventicleApm(apm: ApmApi): void;
 |Name |Type |Description
 
 m|lockManager
-m|LockManager
+m|xref:eventicle_eventicle-utilities_LockManager_2_interface.adoc[LockManager_2]
 |
 
 s|Returns
