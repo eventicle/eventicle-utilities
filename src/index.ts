@@ -4,6 +4,9 @@ import * as loggerUtil from "./logger-util";
 import * as ds from "./datastore"
 import {lockManager, setLockManager, hashCode, LockManager} from "./lock-manager";
 
+/**
+ * Utility function to pause for a given number of ms.
+ */
 function pause(ms: number): Promise<void> {
   return new Promise((res => {
     setTimeout(args => {

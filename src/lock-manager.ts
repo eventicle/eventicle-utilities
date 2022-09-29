@@ -19,7 +19,9 @@ export function lockManager(): LockManager {
 }
 
 /**
- * A lock manager
+ * Lock abstraction. This interface is used inside of Eventicle to provide semaphore access to shared resources.
+ * Notably, this obtains exclusive locks around AggregateRoot instances when processing inside of Commands and Saga steps.
+ *
  */
 export interface LockManager {
   /**
