@@ -1,6 +1,8 @@
 = interface ds.DataQuery
 
+Allow querying against a single field.
 
+Will be mapped to a specific query technology by the underlying Datastore implementation.
 
 
 

@@ -1,6 +1,6 @@
 = interface ds.TransactionOptions
 
-
+Control whether a new Datastore transaction is required, and if so, if it should join an existing transaction or create a new one to use.
 
 
 

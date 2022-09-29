@@ -1,6 +1,8 @@
 = interface ds.TransactionListener
 
+Datastore implementations that support Transactions will emit events on transaction start and commit. This interface defines the listener for those interfaces.
 
+Notably, eventClient implementations register a TransactionListener in order to commit events after any local database is committed.
 
 
 

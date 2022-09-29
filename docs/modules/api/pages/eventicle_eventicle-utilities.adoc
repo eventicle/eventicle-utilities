@@ -11,13 +11,17 @@
 |Name |Summary
 
 s|xref:eventicle_eventicle-utilities_ds_DataQuery_interface.adoc[ds.DataQuery]
-|
+|Allow querying against a single field.
+
+Will be mapped to a specific query technology by the underlying Datastore implementation.
 
 s|xref:eventicle_eventicle-utilities_ds_DataSorting_interface.adoc[ds.DataSorting]
-|
+|Sort a
 
 s|xref:eventicle_eventicle-utilities_ds_DataStore_interface.adoc[ds.DataStore]
-|
+|Abstraction around data storage in the form of document style records.
+
+Eventicle contains a built in InMemoryDatastore. Others can be imported as needed.
 
 s|xref:eventicle_eventicle-utilities_ds_PagedRecords_interface.adoc[ds.PagedRecords]
 |
@@ -26,16 +30,20 @@ s|xref:eventicle_eventicle-utilities_ds_Record_interface.adoc[ds.Record]
 |
 
 s|xref:eventicle_eventicle-utilities_ds_TransactionData_interface.adoc[ds.TransactionData]
-|
+|Bag of data that is associated with a given Transaction inside the Datastore.
+
+Datastore/ eventClient specific. Can be added to by user code, but data inside it should be considered subject to change between versions
 
 s|xref:eventicle_eventicle-utilities_ds_TransactionListener_interface.adoc[ds.TransactionListener]
-|
+|Datastore implementations that support Transactions will emit events on transaction start and commit. This interface defines the listener for those interfaces.
+
+Notably, eventClient implementations register a TransactionListener in order to commit events after any local database is committed.
 
 s|xref:eventicle_eventicle-utilities_ds_TransactionOptions_interface.adoc[ds.TransactionOptions]
-|
+|Control whether a new Datastore transaction is required, and if so, if it should join an existing transaction or create a new one to use.
 
 s|xref:eventicle_eventicle-utilities_LockManager_2_interface.adoc[LockManager_2]
-|A lock manager
+|Lock abstraction. This interface is used inside of Eventicle to provide semaphore access to shared resources. Notably, this obtains exclusive locks around AggregateRoot instances when processing inside of Commands and Saga steps.
 
 s|xref:eventicle_eventicle-utilities_LogApi_interface.adoc[LogApi]
 |
@@ -48,7 +56,7 @@ s|xref:eventicle_eventicle-utilities_LogApi_interface.adoc[LogApi]
 
 ========
 
-
+The current  implementation that Eventicle uses for internal data. Can be used by application code to obtain a reference if required.
 
 
 
@@ -65,7 +73,7 @@ declare function dataStore(): DataStore;
 
 ========
 
-
+Set the Datastore implementation that Eventicle will use to persist in.
 
 
 
@@ -491,7 +499,7 @@ export declare function proxyLogger(logger: Logger, baseDirName: string): winsto
 
 ========
 
-
+Utility function to pause for a given number of ms.
 
 
 

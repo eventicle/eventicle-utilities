@@ -1,6 +1,8 @@
 = interface ds.TransactionData
 
+Bag of data that is associated with a given Transaction inside the Datastore.
 
+Datastore/ eventClient specific. Can be added to by user code, but data inside it should be considered subject to change between versions
 
 
 

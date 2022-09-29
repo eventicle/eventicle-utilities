@@ -1,6 +1,8 @@
 = interface ds.DataStore
 
+Abstraction around data storage in the form of document style records.
 
+Eventicle contains a built in InMemoryDatastore. Others can be imported as needed.
 
 
 
@@ -11,7 +13,7 @@
 
 ========
 
-
+Create a new entity in the datastore.
 
 
 
@@ -22,7 +24,7 @@
 
 m|workspaceId
 m|string
-|
+|Tenant
 
 m|type
 m|string
@@ -49,7 +51,7 @@ createEntity(workspaceId: string, type: string, content: any): Promise<Record>;
 
 ========
 
-
+Remove a single Record by its ID
 
 
 
@@ -60,15 +62,15 @@ createEntity(workspaceId: string, type: string, content: any): Promise<Record>;
 
 m|workspaceId
 m|string
-|
+|The tenant
 
 m|type
 m|string
-|
+|the record type
 
 m|id
 m|string
-|
+|the id of the entity.
 
 s|Returns
 m|Promise&lt;void&gt;
@@ -87,7 +89,7 @@ deleteEntity(workspaceId: string, type: string, id: string): Promise<void>;
 
 ========
 
-
+Delete multiple  from the Datastore via a  result
 
 
 
@@ -98,15 +100,15 @@ deleteEntity(workspaceId: string, type: string, id: string): Promise<void>;
 
 m|workspaceId
 m|string
-|
+|the tenant
 
 m|type
 m|string
-|
+|the Record type
 
 m|query
 m|xref:eventicle_eventicle-utilities_ds_Query_type.adoc[ds.Query]
-|
+|The query, any matching Records will be deleted.
 
 s|Returns
 m|Promise&lt;void&gt;
@@ -125,7 +127,7 @@ deleteMany(workspaceId: string, type: string, query: Query): Promise<void>;
 
 ========
 
-
+Find  using a given , and optionally sort the results using a
 
 
 
@@ -167,7 +169,7 @@ findEntity(workspaceId: string, type: any, query: Query, sorting?: DataSorting):
 
 ========
 
-
+Find  using a given , and optionally sort the results using a , with pagination information provided in
 
 
 
@@ -178,7 +180,7 @@ findEntity(workspaceId: string, type: any, query: Query, sorting?: DataSorting):
 
 m|workspaceId
 m|string
-|
+|The tenant id.
 
 m|type
 m|string
@@ -190,7 +192,7 @@ m|xref:eventicle_eventicle-utilities_ds_Query_type.adoc[ds.Query]
 
 m|sorting
 m|xref:eventicle_eventicle-utilities_ds_DataSorting_interface.adoc[ds.DataSorting]
-|
+|How to sort the results
 
 m|page
 m|number
@@ -217,7 +219,7 @@ findEntityPaginated(workspaceId: string, type: string, query: Query, sorting: Da
 
 ========
 
-
+Look up a single  by its ID
 
 
 
@@ -228,15 +230,15 @@ findEntityPaginated(workspaceId: string, type: string, query: Query, sorting: Da
 
 m|workspaceId
 m|string
-|
+|when running on a multi-tenant Datastore, selects the tenant.
 
 m|type
 m|string
-|
+|The type of the Record
 
 m|id
 m|string
-|
+|The record ID
 
 s|Returns
 m|Promise&lt;ds.Record_2&gt;
@@ -272,7 +274,7 @@ getTransactionData(): TransactionData;
 
 ========
 
-
+Whether transaction data currently exists in this context.
 
 
 
@@ -357,7 +359,7 @@ on(event: 'transaction.commit', listener: (name: string, data: TransactionData) 
 
 ========
 
-
+Save updates an existing entity
 
 
 
@@ -368,15 +370,15 @@ on(event: 'transaction.commit', listener: (name: string, data: TransactionData) 
 
 m|workspaceId
 m|string
-|
+|The tenant
 
 m|type
 m|string
-|
+|the record type
 
 m|item
 m|ds.Record_2
-|
+|The existing Record. Must have come from  or
 
 s|Returns
 m|Promise&lt;ds.Record_2&gt;
@@ -395,7 +397,7 @@ saveEntity(workspaceId: string, type: string, item: Record): Promise<Record>;
 
 ========
 
-
+Open a transaction (or optionally join one if it exists)
 
 
 
@@ -406,11 +408,11 @@ saveEntity(workspaceId: string, type: string, item: Record): Promise<Record>;
 
 m|exec
 m|() =&gt; Promise&lt;T&gt;
-|
+|transaction is open within this execution. Once this function promise resolves, the transaction is committed or rolled back If `exec` Promise rejects, then the transaction is rolled back.
 
 m|options
 m|xref:eventicle_eventicle-utilities_ds_TransactionOptions_interface.adoc[ds.TransactionOptions]
-|
+|if exists, controls if the trnasction should be new, or an existing on can be used.
 
 s|Returns
 m|Promise&lt;T&gt;

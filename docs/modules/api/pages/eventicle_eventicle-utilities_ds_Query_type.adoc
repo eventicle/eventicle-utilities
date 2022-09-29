@@ -1,5 +1,5 @@
 = type ds.Query
 
-
+A query object, to use with Datastore
 
 
