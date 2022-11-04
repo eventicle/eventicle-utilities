@@ -35,7 +35,7 @@ export interface LockManager {
    * @param onLock
    * @param onLockFailure
    */
-  withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+  withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
 
   /**
    * Obtain a lock over a shared resource.
@@ -46,7 +46,7 @@ export interface LockManager {
    * @param onLock
    * @param onLockFailure
    */
-  tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+  tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
 }
 
 export function hashCode(str: string) {
