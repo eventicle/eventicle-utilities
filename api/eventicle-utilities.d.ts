@@ -181,7 +181,7 @@ declare interface LockManager_2 {
      * @param onLock
      * @param onLockFailure
      */
-    withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+    withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
     /**
      * Obtain a lock over a shared resource.
      *
@@ -191,7 +191,7 @@ declare interface LockManager_2 {
      * @param onLock
      * @param onLockFailure
      */
-    tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+    tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
 }
 export { LockManager_2 as LockManager }
 

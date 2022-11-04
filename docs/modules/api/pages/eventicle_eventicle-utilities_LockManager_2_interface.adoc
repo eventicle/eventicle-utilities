@@ -21,7 +21,7 @@ If the lock is not immediately available, will call onLockFailure and terminate
 .Signature
 [source,typescript]
 ----
-tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+tryLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
 ----
 
 ========
@@ -42,7 +42,7 @@ Will call onLockFailure if the lock is not available within the built in timeout
 .Signature
 [source,typescript]
 ----
-withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: () => void) => Promise<T>;
+withLock: <T>(id: string, onLock: () => Promise<T>, onLockFailure: (e?: Error) => void) => Promise<T>;
 ----
 
 ========
