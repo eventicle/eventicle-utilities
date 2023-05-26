@@ -22,7 +22,7 @@ declare interface DataQuery {
     value: string | number | [number, number] | string[] | {
         [key: string]: any;
     };
-    op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE";
+    op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE" | "INARRAY";
 }
 
 /**
