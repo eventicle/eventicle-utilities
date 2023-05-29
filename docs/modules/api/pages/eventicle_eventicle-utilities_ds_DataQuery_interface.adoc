@@ -21,7 +21,7 @@ Will be mapped to a specific query technology by the underlying Datastore implem
 .Signature
 [source,typescript]
 ----
-op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE";
+op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE" | "ARRAY_CONTAINS";
 ----
 
 ========
