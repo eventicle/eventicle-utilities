@@ -19,7 +19,7 @@ declare interface ApmApi {
  * Will be mapped to a specific query technology by the underlying Datastore implementation.
  */
 declare interface DataQuery {
-    value: string | number | [number, number] | string[] | {
+    value: string | number | [number, number] | string[] | boolean | {
         [key: string]: any;
     };
     op: "EQ" | "LT" | "GT" | "LTE" | "GTE" | "BETWEEN" | "IN" | "OBJECT" | "LIKE" | "ARRAY_CONTAINS";
