@@ -6,6 +6,23 @@ Control whether a new Datastore transaction is required, and if so, if it should
 
 == Properties
 
+[id="eventicle_eventicle-utilities_ds_TransactionOptions_isolationLevel_member"]
+=== isolationLevel
+
+========
+
+Not supported in all datastore implementations.
+
+
+
+
+.Signature
+[source,typescript]
+----
+isolationLevel: "none" | "read-committed" | "repeatable-read" | "serializable";
+----
+
+========
 [id="eventicle_eventicle-utilities_ds_TransactionOptions_propagation_member"]
 === propagation
 

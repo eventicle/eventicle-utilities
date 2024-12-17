@@ -319,6 +319,10 @@ declare interface TransactionListener {
  */
 declare interface TransactionOptions {
     propagation: "requires" | "requires_new";
+    /**
+     * Not supported in all datastore implementations.
+     */
+    isolationLevel: "none" | "read-committed" | "repeatable-read" | "serializable";
 }
 
 export declare function withAPM(exec: (apm: ApmApi) => Promise<void>): Promise<void>;
