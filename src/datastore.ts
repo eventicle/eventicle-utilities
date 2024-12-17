@@ -45,6 +45,10 @@ interface DataSorting {
  */
 interface TransactionOptions {
   propagation: "requires" | "requires_new"
+  /**
+   * Not supported in all datastore implementations.
+   */
+  isolationLevel: "none" | "read-committed" | "repeatable-read" | "serializable"
 }
 
 /**
