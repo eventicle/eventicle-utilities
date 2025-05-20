@@ -2,7 +2,7 @@
 
 import { handleNestedContextualError, handleTopLevelContextualError, isError, maybeInsertInlineContext } from "./logger-util";
 import * as winston from "winston";
-import safeStringify from 'safe-stringify';
+import safeStringify from 'fast-safe-stringify';
 
 export interface LogApi {
   error(message: string, arg?: any)

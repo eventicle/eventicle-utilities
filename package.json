@@ -1,6 +1,6 @@
 {
   "name": "@eventicle/eventicle-utilities",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Useful utilities",
   "repository": "git@github.com:eventicle/eventicle-utilities.git",
   "author": "Eventicle Team",
@@ -17,7 +17,9 @@
     "api": "yarn tsc && api-extractor run;api-documenter yaml -i tmp/api -o tmp/api-yaml;api-documenter-yaml-to-antora-asciidoc asciidoc -i tmp/api-yaml"
   },
   "dependencies": {
-    "safe-stringify": "^1.1.1",
+    "fast-safe-stringify": "^2.1.1",
+    "install": "^0.13.0",
+    "npm": "^11.4.0",
     "stack-trace": "^1.0.0-pre1",
     "winston": "^3.3.3"
   },
