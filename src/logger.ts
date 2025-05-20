@@ -2,6 +2,7 @@
 
 import { handleNestedContextualError, handleTopLevelContextualError, isError, maybeInsertInlineContext } from "./logger-util";
 import * as winston from "winston";
+import safeStringify from 'safe-stringify';
 
 export interface LogApi {
   error(message: string, arg?: any)
@@ -18,24 +19,24 @@ export function setLogApi(log: LogApi) {
 
 let loggerApi: LogApi = {
   debug(message: string, arg?: any) {
-    console.log(`DEBUG: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`DEBUG: ${message}: ${safeStringify(arg)}`)
   },
   error(message: string, arg?: any) {
     console.log(arg)
-    console.log(`ERROR: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`ERROR: ${message}: ${safeStringify(arg)}`)
     console.log(new Error().stack)
   },
   info(message: string, arg?: any) {
-    console.log(`INFO: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`INFO: ${message}: ${safeStringify(arg)}`)
   },
   rainbow(message: string, arg?: any) {
-    console.log(`RAINBOW: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`RAINBOW: ${message}: ${safeStringify(arg)}`)
   },
   trace(message: string, arg?: any) {
-    console.log(`TRACE: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`TRACE: ${message}: ${safeStringify(arg)}`)
   },
   warn(message: string, arg?: any) {
-    console.log(`WARN: ${message}: ${JSON.stringify(arg)}`)
+    console.log(`WARN: ${message}: ${safeStringify(arg)}`)
   }
 }
 
@@ -51,7 +52,7 @@ var formatMessage = function (message) {
 
 function stringify(obj) {
   try {
-    return JSON.stringify(obj);
+    return safeStringify(obj);
   } catch (err) {
     // eslint-disable-next-line no-console
     console.log('error stringifying object for logger, by-passing..');
