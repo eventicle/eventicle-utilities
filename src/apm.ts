@@ -69,7 +69,7 @@ export async function span<T>(name: string, labels: { [key: string]: string }, e
     if (span) {
       span.addLabels(labels)
     } else {
-      logger.info("APM was requested to start a span, but did not: " + name)
+      logger.debug("APM was requested to start a span, but did not: " + name)
     }
   }
 
